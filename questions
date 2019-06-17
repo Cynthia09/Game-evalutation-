@@ -1,0 +1,90 @@
+var correctAnswerXposition = -1;
+var randomAnswerXposition = -1; 
+var randomAnswer2Xposition = -1;
+var askedQuestion = false;
+var threshold = 50;
+var y  = 200; 
+	
+var randomQuestionGenerator = function () {
+
+		var num1 = Math.floor(random(50, 99));
+
+		var num2 = Math.floor(random(0, 49));
+
+		var operator = random(0, 1);
+		var add = false;
+		
+		if (operator === 0) {
+			add = true;
+		}
+
+		var operationString = '-';
+		
+		var answer = num1 - num2;
+		
+		if (add === true) {
+			answer = num1 + num2;
+			operationString = '+';
+		}
+
+		var randomAnswer = Math.floor(random(0, 50));
+		var randomAnswer2 = Math.floor(random(0, 50));
+
+		textSize(20);
+		text('What is ' + num1 + operationString + num2 + '?', 150,100);
+
+		var arrayOfXPositions = [111, 211, 311];
+		var randomIndex = Math.floor(random(0, 3));
+
+		correctAnswerXposition = arrayOfXPositions[randomIndex];
+		randomAnswerXposition = -1; 
+		randomAnswer2Xposition = -1;
+
+		if (randomIndex === 0) {
+			randomAnswerXposition = arrayOfXPositions[1];
+			randomAnswer2Xposition = arrayOfXPositions[2];
+		} else if (randomIndex === 1) {
+			randomAnswerXposition = arrayOfXPositions[0];
+			randomAnswer2Xposition = arrayOfXPositions[2];
+		} else if (randomIndex === 2) {
+			randomAnswerXposition = arrayOfXPositions[0];
+			randomAnswer2Xposition = arrayOfXPositions[1];
+		}
+
+		ellipse(correctAnswerXposition, y, 50, 50);
+		ellipse(randomAnswerXposition, y, 50, 50);
+		ellipse(randomAnswer2Xposition, y, 50, 50);
+		fill(0);
+		text(answer, correctAnswerXposition, y, 100,100);
+		text(randomAnswer, randomAnswerXposition, y, 100,100);
+		text(answer, randomAnswer2Xposition, y, 100,100);
+		  
+};
+
+var mousePressed = function(){
+	
+	if (askedQuestion === true){
+		if (dist(mouseX, mouseY, correctAnswerXposition, y) < threshold) {
+					println("CORRECT ANSWER"); 
+
+		} else if (dist(mouseX, mouseY, randomAnswerXposition, y) < threshold) {
+					println("INCORRECT ANSWER"); 
+
+		} else if (dist(mouseX, mouseY, randomAnswer2Xposition, y) < threshold) {
+					println("INCORRECT ANSWER"); 
+
+		}
+	}
+	
+};
+
+var draw = function(){
+   
+   
+   if (askedQuestion === false){
+	   background(0, 43, 255);
+	   randomQuestionGenerator();
+	   askedQuestion = true; 
+   }
+	
+};
