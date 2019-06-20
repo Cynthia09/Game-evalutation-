@@ -1,0 +1,984 @@
+var score =0;
+var currentscene=0;
+
+
+
+
+//MAY 3RD 2019
+
+var starsize = 14;
+
+noStroke();
+
+var leftX = 93;
+
+var rightX = 267;
+
+var gem = getImage("cute/GemOrange");
+
+var currentscene = 0;
+
+var xpos = 39;
+
+var redthing = getImage("avatars/piceratops-tree");
+
+var greenthing = getImage("avatars/leafers-tree");
+
+var greenthing2 = getImage("avatars/leafers-tree");
+
+
+
+//MAY 3RD 2019
+var score =0;
+var currentscene=0;
+
+
+
+
+//MAY 3RD 2019
+
+var starsize = 14;
+
+noStroke();
+
+var leftX = 93;
+
+var rightX = 267;
+
+var gem = getImage("cute/GemOrange");
+
+var currentscene = 0;
+
+var xpos = 39;
+
+var redthing = getImage("avatars/piceratops-tree");
+
+var greenthing = getImage("avatars/leafers-tree");
+
+var greenthing2 = getImage("avatars/leafers-tree");
+
+
+
+var drawbutton = function() { //BUTTON FUNCTION
+
+	fill(39, 208, 217);
+
+	rect(132, 271, 136, 41, 10);
+
+	fill(255, 0, 0);
+
+	textSize(20);
+
+	text("PLAY!", 174, 297);
+
+};
+
+
+
+var drawscene1 = function() {
+
+	currentscene = 1; //INTRO
+
+	background(2, 24, 26);
+
+	textSize(30);
+
+	fill(40, 201, 201);
+
+	text("BLUE COIN RUN", 101, 100);
+
+	noFill();
+
+	stroke(90, 158, 92);
+
+	strokeWeight(6);
+
+	rect(41, 64, 333, 54, 6);
+
+	strokeWeight(16);
+
+	stroke(247, 234, 247);
+
+	arc(199, 263, 187, 177, 178, 359);
+
+	arc(199, 263, 158, 177, 186, 357);
+
+	arc(199, 263, 134, 178, 189, 351);
+
+	arc(199, 263, 216, 177, 176, 363);
+
+	line(91, 277, 132, 250);
+
+	line(308, 277, 264, 255);
+
+
+
+
+
+	for (var x = 168; x < 222; x += 13) {
+
+		fill(13, 73, 224);
+
+		image(gem, x, 228, starsize, starsize);
+
+		image(gem, x, 235, starsize, starsize);
+
+		image(gem, x, 242, starsize, starsize);
+
+	}
+
+
+
+	noStroke();
+
+	drawbutton();
+
+	rect(141, 337, 122, 30, 5);
+
+	fill(0, 0, 0);
+
+	text("ABOUT US", 154, 357);
+
+};
+
+
+
+
+
+
+var drawscene2 = function() {
+
+	//CHOOSE A                                                                                     CHARACTER
+
+	currentscene = 2;
+
+	background(73, 27, 163);
+
+	textSize(22);
+
+	fill(232, 93, 116);
+
+	text("RULES", 160, 100);
+
+	noFill();
+
+	stroke(51, 213, 219);
+
+	strokeWeight(6);
+
+	rect(41, 64, 333, 54, 6);
+
+	//ellipse(113, 269, 150, 150);
+
+	ellipse(296, 270, 150, 150);
+
+	strokeWeight(1.5);
+
+	//stroke(238, 255, 0);
+
+	//rect(45, 146, 139, 23);
+
+	//rect(226, 146, 139, 23);
+
+	fill(43, 255, 0);
+
+	//text("HAYDEN", 66, 165);
+
+	text("CHARACTER", 228, 176);
+
+	text("RULES:", 39, 173);
+	textSize(10);
+	text(" - USE THE CHARCTER TO COLLECT ", 22, 206);
+	text("COINS ", 32, 218);
+	text("- USE THE SPACE BAR TO JUMP UP ", 22, 236);
+	text("DOWN ", 28, 250);
+	text(" - AVOID THE NEGATIVE COINS (THEY ", 22, 269);
+	text("WILL DEDUCT FROM YOUR TOTAL ", 29, 283);
+	text("SCORE", 29, 296);
+	text("- WHEN YOU COLLECT ENOUGH COINS", 22, 321);
+	text("ANSWER THE MATH QUESTION", 22, 337);
+	text("CORRECLTY TO WIN THE GAME", 22, 351);
+
+
+	image(greenthing2, 236, 206);
+
+	//we don't have bitmojis yet, so we are substituting random images for now
+
+	fill(255, 0, 0);
+
+	textSize(20);
+
+	rect(30, 15, 40, 20);
+
+	fill(10, 7, 7);
+
+	textSize(15);
+
+	text("back", 33, 30);
+
+    noFill();
+
+	fill(204, 25, 25);
+
+	textSize(15);
+
+
+
+	noFill();
+
+	rect(276, 362, 58, 20);
+
+	text("NEXT", 283, 378);
+
+
+
+};
+
+
+
+var aboutus = function() {
+
+	currentscene = 3;
+
+	background(240, 231, 240);
+
+	fill(10, 9, 9);
+
+	textSize(30);
+
+	text("ABOUT US", 117, 57);
+
+	noFill();
+
+	strokeWeight(4);
+
+	stroke(214, 30, 214);
+
+	rect(92, 26, 208, 45);
+
+	rect(48, 93, 300, 252);
+
+
+
+
+
+	rect(32, 365, 53, 22);
+
+	textSize(15);
+
+	text("BACK", 36, 381);
+
+
+
+	text("This game was produced by WOLFPACK", 61, 119);
+
+	text("for our computer science ICS02 game", 61, 135);
+
+	text("evaluation. The game was created using", 61, 155);
+
+	text("Java Script and HTML/CSS. We created a ", 61, 175);
+
+	text("layout and themes using the help of our 2", 61, 194);
+
+	text("students throughout this course.", 61, 216);
+
+
+
+};
+
+
+
+
+
+var rules = function() {
+
+	currentscene = 4;
+
+	background(247, 225, 247);
+
+	fill(10, 9, 9);
+
+	textSize(30);
+
+	text("RULES", 140, 57);
+
+	noFill();
+
+	strokeWeight(4);
+
+	stroke(214, 30, 214);
+
+	rect(92, 26, 208, 45); //title
+
+	rect(48, 93, 300, 252);
+
+};
+
+
+
+mouseClicked = function() {
+
+	if (mouseX > 132 && mouseX < 268 && mouseY > 271 && mouseY < 312 && currentscene === 1) {
+
+		drawscene2();
+
+		//play button
+
+	}
+
+	if (mouseX > 141 && mouseX < 263 && mouseY > 337 && mouseY < 367 && currentscene === 1) {
+
+		aboutus(); // about us button
+
+	}
+
+	if (mouseX > 48 && mouseX < 348 && mouseY > 93 && mouseY < 300 && currentscene === 3) {
+
+		drawscene2(); //rules button
+
+	}
+
+	if (mouseX > 32 && mouseX < 85 && mouseY > 365 && mouseY < 387 && currentscene === 3) {
+
+		//goes back from aboutus to main screen...
+
+		drawscene1();
+
+	}
+
+	if (mouseX > 276 && mouseX < 334 && mouseY > 362 && mouseY < 382 && currentscene === 2) {
+
+		currentscene = 6;
+
+	}
+
+	if (mouseX > 30 && mouseX < 70 && mouseY > 15 && mouseY < 35 && currentscene === 2) {
+
+		//back button in character selection (scene 2)...
+
+		drawscene1();
+
+	}
+
+
+
+
+
+};
+
+
+
+
+
+/*
+
+GAMEPLAY CODE AFTER
+
+________________________________________________________________
+
+*/
+
+//drawscene1();
+
+var currentscene=0;
+ 
+ var win = function() {
+    background(81, 0, 255);
+   var medalW = 140;
+   var medalH = 140;
+   noStroke();
+  fill(255, 255, 0);
+  stroke(255, 0, 0);
+  strokeWeight(49);
+  line(183, 250, 73, 44);
+  line(228, 250, 329, 45);
+  textSize(50);
+  noStroke();
+  ellipse(211, 250, medalW, medalH);
+  fill(10, 9, 9);
+  text("YOU WON!", 81, 368);
+  text("1st", 173, 259);
+  
+ };
+ 
+ var correctAnswerXposition = -1;
+var randomAnswerXposition = -1; 
+var randomAnswer2Xposition = -1;
+var askedQuestion = false;
+var threshold = 50;
+var y  = 200; 
+
+    var correctscene = function () {
+    background(83, 224, 32);
+    fill(242, 239, 239);
+    rect(123, 164, 171, 66, 0);
+    textSize(24);
+    fill(28, 232, 35);
+    text("CORRECT", 153, 204);
+    noFill();
+    rect(311, 361, 61, 21, 5);
+    fill(247, 232, 242);
+    textSize(15);
+    text("NEXT", 322, 377);
+    };
+    
+    var wrongscene = function () {
+    background(222, 68, 33);
+    fill(242, 239, 239);
+    rect(123, 164, 171, 66, 0);
+    textSize(24);
+    fill(230, 63, 30);
+    text("WRONG", 165, 204);
+    noFill();
+    rect(311, 361, 61, 21, 5);
+    fill(247, 232, 242);
+    textSize(15);
+    text("NEXT", 322, 377);
+    };
+
+   
+  
+ 
+ 
+ var randomQuestionGenerator = function () {
+        var num1 = Math.floor(random(50, 99));
+
+		var num2 = Math.floor(random(0, 49));
+
+		var operator = Math.floor(random(0, 2));
+		var add = false;
+		
+		if (operator === 0) {
+			add = true;
+		}
+
+		var operationString = '-';
+		
+		var answer = num1 - num2;
+		
+		if (add === true) {
+			answer = num1 + num2;
+			operationString = '+';
+		}
+
+		var randomAnswer = Math.floor(random(0, 50));
+		var randomAnswer2 = Math.floor(random(0, 50));
+
+		textSize(20);
+		fill(8, 0, 0);
+		text('What is ' + num1 + operationString + num2 + '?', 150,100);
+
+		var arrayOfXPositions = [111, 211, 311];
+		var randomIndex = Math.floor(random(0, 3));
+
+		correctAnswerXposition = arrayOfXPositions[randomIndex];
+		randomAnswerXposition = -1; 
+		randomAnswer2Xposition = -1;
+
+		if (randomIndex === 0) {
+			randomAnswerXposition = arrayOfXPositions[1];
+			randomAnswer2Xposition = arrayOfXPositions[2];
+		} else if (randomIndex === 1) {
+			randomAnswerXposition = arrayOfXPositions[0];
+			randomAnswer2Xposition = arrayOfXPositions[2];
+		} else if (randomIndex === 2) {
+			randomAnswerXposition = arrayOfXPositions[0];
+			randomAnswer2Xposition = arrayOfXPositions[1];
+		}
+        
+        fill(247, 239, 239);
+		ellipse(correctAnswerXposition+10, y, 50, 50);
+		ellipse(randomAnswerXposition+10, y, 50, 50);
+		ellipse(randomAnswer2Xposition+10, y, 50, 50);
+		fill(0);
+		text(answer, correctAnswerXposition, y, 100,100);
+		text(randomAnswer, randomAnswerXposition, y, 100,100);
+		text(randomAnswer2, randomAnswer2Xposition, y, 100,100);
+		  
+};
+
+var score = 0;
+
+
+var fakescene = function() {
+
+	background(255, 255, 255);
+
+	fill(255, 0, 0);
+
+	text("YOU WIN!", 200, 200);
+
+};
+
+
+
+// Calls the greenthing function
+
+var greenthing = function(x, y) {
+
+	this.x = x;
+
+	this.y = y;
+
+	this.img = getImage("avatars/leafers-tree");
+
+	this.coin = 0;
+
+	this.score = 0;
+
+};
+
+
+
+
+
+
+
+// Draws the greenthing
+
+greenthing.prototype.draw = function() {
+
+	fill(255, 0, 0);
+
+	this.y = constrain(this.y, 0, height - 60);
+
+	image(this.img, this.x, this.y, 100, -100);
+
+};
+
+
+
+
+
+
+
+// The greenthing Jumps
+
+greenthing.prototype.hop = function() {
+
+	this.img = getImage("avatars/leafers-ultimate");
+
+	this.y -= 10;
+
+};
+
+
+
+// The greenthing Hops
+
+greenthing.prototype.fall = function() {
+
+	this.img = getImage("avatars/leafers-tree");
+
+	this.y += 10;
+
+};
+
+
+
+// The function for the coin
+
+greenthing.prototype.checkForStickGrab = function(coin) {
+
+	if ((coin.x >= this.x && coin.x <= (this.x + 105)) &&
+
+		(coin.y >= this.y && coin.y <= (this.y + 50))) {
+
+		coin.y = -100;
+
+		//this.fishes++; 
+
+		//coin.score++;
+
+		this.score++;
+
+	}
+
+};
+
+
+
+// Negative coins
+
+greenthing.prototype.checkForBadGrab = function(redcoin) {
+
+	if ((redcoin.x >= this.x && redcoin.x <= (this.x + 40)) &&
+
+		(redcoin.y >= this.y && redcoin.y <= (this.y + 40))) {
+
+		redcoin.y = -400;
+
+		//this.fishes++; 
+
+		this.score--;
+
+	}
+
+};
+
+
+
+
+
+// The fucntion for the coins
+
+var coin = function(x, y) {
+
+	this.x = x;
+
+	this.y = y;
+
+
+
+
+
+};
+
+
+
+// The fish and coin drawing
+
+coin.prototype.draw = function() {
+
+	fill(173, 163, 90);
+
+	ellipse(this.x, this.y, 35, 35);
+
+	fill(0, 0, 0);
+
+	textSize(12);
+
+	text("$", this.x, this.y, 18, 39);
+
+
+
+
+
+	for (var x = 0; x < 400; x += 47) {
+
+		fill(37, 42, 128);
+
+		ellipse(x, 220, 57, 50);
+
+		rect(0, 229, 409, 203);
+
+	}
+
+
+
+	fill(16, 92, 21);
+
+	triangle(6, 682, 65, 336, 56, 255);
+
+	triangle(209, 682, 73, 320, 7, 230);
+
+	triangle(300, 682, 284, 336, 310, 230);
+
+	triangle(333, 682, 265, 336, 233, 284);
+
+
+
+	//fish function
+
+	var drawFish = function(centerX, centerY, bodyLength, bodyHeight, bodyColor, tailWidth, tailHeight) {
+
+
+
+		noStroke();
+
+		fill(bodyColor);
+
+		// body
+
+		ellipse(centerX, centerY, bodyLength, bodyHeight);
+
+		// tail
+
+		var tailWidth = bodyLength / 4;
+
+		var tailHeight = bodyHeight / 2;
+
+		triangle(centerX - bodyLength / 2, centerY,
+
+			centerX - bodyLength / 2 - tailWidth, centerY - tailHeight,
+
+			centerX - bodyLength / 2 - tailWidth, centerY + tailHeight);
+
+		// eye
+
+		fill(33, 33, 33);
+
+		ellipse(centerX + bodyLength / 4, centerY, bodyHeight / 5, bodyHeight / 5);
+
+	};
+
+
+
+	drawFish(100, 311, 74, 67, color(133, 13, 109));
+
+	drawFish(357, 356, 38, 23, color(222, 138, 11));
+
+	drawFish(346, 259, 41, 20, color(204, 12, 12));
+
+	drawFish(124, 245, 50, 34, color(153, 89, 136));
+
+	drawFish(103, 327, 34, 20, color(217, 240, 88));
+
+
+
+	rectMode(random);
+
+};
+
+
+
+// Redcoin fucntion
+
+var redcoin = function(x, y) {
+
+	this.x = x;
+
+	this.y = y;
+
+
+
+};
+
+
+
+
+
+// Redcoin function draw
+
+redcoin.prototype.draw = function() {
+
+	fill(247, 3, 44);
+
+	ellipse(this.x, this.y, 30, 30);
+
+	fill(0, 0, 0);
+
+	textSize(12);
+
+	text("-", this.x, this.y, 5, 54);
+
+	rectMode(CENTER);
+
+};
+
+
+
+
+
+// The loop for the Fish
+
+var greenthing = new greenthing(250, 350);
+
+var coin1 = [];
+
+for (var i = 0; i < 50; i++) {
+
+	coin1.push(new coin(i * 40 + 299, random(20, 213)));
+
+}
+
+
+
+// The loop for the redcoin
+
+//var redcoin = new redcoin ( 256, 360);
+
+var redcoin1 = [];
+
+for (var i = 0; i < 25; i++) {
+
+	redcoin1.push(new redcoin(i * 40 + 329, random(20, 415)));
+
+}
+
+
+
+//A loop for the bottom
+
+var oceanXs = [];
+
+for (var i = 0; i < 25; i++) {
+
+	oceanXs.push(i * 20);
+
+}
+
+
+
+
+
+//VM
+
+drawscene1(); //drawing original scene....
+
+
+
+draw = function() {
+
+
+
+
+
+	//VM
+
+	if (currentscene === 6){
+
+
+
+
+
+		background(170, 227, 219);
+
+		fill(150, 144, 88);
+
+		rectMode(CORNER);
+
+		rect(0, height * 1, width, height * 9.3);
+
+
+
+
+
+
+
+		//Loop for the moving bottom
+
+
+
+		for (var i = 0; i < oceanXs.length; i++) {
+
+
+
+			image(getImage("avatars/aqualine-seed"), oceanXs[i], height * 1, 50, 90);
+
+			fill(141, 222, 106);
+
+			rect(oceanXs[i], 271, 200, 200);
+
+		}
+
+
+
+		// Ocean loop
+
+		oceanXs[i] -= 1;
+
+		if (oceanXs[i] <= -20) {
+
+			oceanXs[i] = width;
+
+		}
+
+
+
+
+
+		//Draws The coin Loop
+
+		for (var i = 0; i < coin1.length; i++) {
+
+			coin1[i].draw();
+
+			greenthing.checkForStickGrab(coin1[i]);
+
+			coin1[i].x -= 1;
+
+		}
+
+
+
+		// Draws the redcoin loop
+
+		for (var i = 0; i < redcoin1.length; i++) {
+
+			redcoin1[i].draw();
+
+			greenthing.checkForBadGrab(redcoin1[i]);
+
+			redcoin1[i].x -= 1;
+
+		}
+
+
+
+
+
+		// Draws the scoreboard
+
+		textSize(30);
+
+		fill(184, 24, 24);
+
+		text("score: " + greenthing.score, 150, 30);
+
+//println(greenthing.score);
+
+	
+
+		if (greenthing.score / coin1.length >= 0.01) {
+
+			//VM
+
+			currentscene = 7;
+
+}
+
+
+
+		if (keyIsPressed && keyCode === 0) {
+
+			greenthing.hop();
+
+		} else {
+
+			greenthing.fall();
+
+		}
+
+		greenthing.draw();
+
+	}
+
+if (currentscene===7) {
+   
+   if (askedQuestion === false){
+	   background(255, 0, 0);
+	   randomQuestionGenerator();
+	   askedQuestion = true; 
+   }
+	
+
+}
+
+};
+
+
+var mousePressed = function(){
+	
+	if (askedQuestion === true){
+		if (dist(mouseX, mouseY, correctAnswerXposition, y) < threshold && currentscene===7) {           currentscene=8;
+		          win();
+		
+					//println("CORRECT ANSWER"); 
+    } else if (dist(mouseX, mouseY, randomAnswerXposition, y) < threshold && currentscene===7) {
+					//println("INCORRECT ANSWER"); 
+                              currentscene=9;
+
+		} else if (dist(mouseX, mouseY, randomAnswer2Xposition, y) < threshold && currentscene ===7) {
+					//println("INCORRECT ANSWER"); 
+                               currentscene=9;
+		}if (currentscene===9){
+             currentscene=6;
+           } 
+	}
+	
+};
+
+//rect(311, 358, 61, 21);
+
+
